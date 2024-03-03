@@ -10,8 +10,8 @@ export default function Header() {
   };
 
   return (
-    <nav className="bg-white border-gray-200 dark:bg-gray-900 shadow-md">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav className="border-gray-200 dark:bg-gray-900 sticky top-0 z-50 shadow-md">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
         <Link
           to="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
@@ -113,17 +113,17 @@ export default function Header() {
               </div>
             </li>
 
-            <li className="nav-item">
+            <li className="nav-item  text-xl">
               <NavLink className="nav-link" exact="true" to="/">
                 Home
               </NavLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item  text-xl">
               <NavLink className="nav-link" exact="true" to="/about">
                 About
               </NavLink>
             </li>
-            <li className="nav-item">
+            <li className="nav-item  text-xl">
               <NavLink className="nav-link" exact="true" to="/sign-in">
                 SignIn
               </NavLink>

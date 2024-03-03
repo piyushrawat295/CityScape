@@ -6,11 +6,11 @@
 
 
 body {
-    /* Set background image */
-    background-image: url('./BG.jpg');
-    
-    /* Set background size and other properties as needed */
-    background-size: cover; /* Adjust as per your requirement */
-    background-repeat: no-repeat; /* Prevent repetition */
-    /* Add any other background properties such as position, attachment, etc. */
-  }
+  /* Set background image */
+  background-image: url('./BG.jpg');
+  
+  /* Set background size and other properties as needed */
+  background-size: cover; /* Adjust as per your requirement */
+  background-repeat: repeat; /* Prevent repetition */
+  /* Add any other background properties such as position, attachment, etc. */
+}
