@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+
+body {
+    /* Set background image */
+    background-image: url('./BG.jpg');
+    
+    /* Set background size and other properties as needed */
+    background-size: cover; /* Adjust as per your requirement */
+    background-repeat: no-repeat; /* Prevent repetition */
+    /* Add any other background properties such as position, attachment, etc. */
+  }
