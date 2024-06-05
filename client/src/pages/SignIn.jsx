@@ -7,6 +7,7 @@ import {
   signInSuccess,
   signInFailure,
 } from '../redux/user/userSlice';
+import Oauth from "../components/Oauth";
 
 export default function SignUp() {
   const [formData, setFormData] = useState({});
@@ -94,6 +95,7 @@ export default function SignUp() {
         >
           SignIN
         </button>
+        <Oauth/>
       </form>
     </div>
     {error && <p className="text-red-500 mt-5">{error}</p>}
