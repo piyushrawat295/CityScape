@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Link,NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "./compo.css";
+import { useSelector } from "react-redux";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -8,7 +9,7 @@ export default function Header() {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-
+  const { currentUser } = useSelector((state) => state.user);
   return (
     <nav className="border-gray-200 dark:bg-gray-900 sticky top-0 z-50 shadow-md">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
@@ -127,7 +128,20 @@ export default function Header() {
               <NavLink className="nav-link" exact="true" to="/sign-in">
                 SignIn
               </NavLink>
+
+              
             </li>
+            <Link to="/profile">
+                {currentUser ? (
+                  <img
+                    className="rounded-full h-10 w-10 object-cover"
+                    src={currentUser.avatar}
+                    alt="profile"
+                  />
+                ) : (
+                  <li className=" text-slate-700 hover:underline"> Sign in</li>
+                )}
+              </Link>
           </ul>
         </div>
       </div>
