@@ -287,7 +287,9 @@ export default function CreateListing() {
               />
               <div className="flex flex-col items-center">
                 <p className="merriweather-regular ">Regular price</p>
-                <span className="text-xs">(₹ / month)</span>
+                {formData.type === "rent" && (
+                  <span className="text-xs">(₹ / month)</span>
+                )}
               </div>
             </div>
             {formData.offer && (
@@ -304,7 +306,9 @@ export default function CreateListing() {
                 />
                 <div className="flex flex-col items-center">
                   <p className="merriweather-regular">Discounted price</p>
+                  {formData.type === "rent" && (
                   <span className="text-xs">(₹ / month)</span>
+                )}
                 </div>
               </div>
             )}
@@ -378,10 +382,7 @@ export default function CreateListing() {
                 </button>
               </div>
             ))}
-          <button
-            disabled={loading || uploading}
-            className="button2"
-          >
+          <button disabled={loading || uploading} className="button2">
             {loading ? "Creating..." : "Create listing"}
           </button>
           {error && <p className="text-red-700 text-sm">{error}</p>}
