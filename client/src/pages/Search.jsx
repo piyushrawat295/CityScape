@@ -130,69 +130,83 @@ export default function Search() {
           <div className="flex gap-2 flex-wrap items-center">
             <label className="font-semibold">Type:</label>
             <div className="flex gap-2">
-              <input
-                type="checkbox"
-                id="all"
-                className="w-5"
-                onChange={handleChange}
-                checked={sidebardata.type === "all"}
-              />
-              <span>Rent & Sale</span>
+              <label className="container">
+                <input
+                  type="checkbox"
+                  id="all"
+                  onChange={handleChange}
+                  checked={sidebardata.type === "all"}
+                />
+                <div className="checkmark"></div>
+              </label>
+              <span className="merriweather-regular">Both</span>
             </div>
             <div className="flex gap-2">
-              <input
-                type="checkbox"
-                id="rent"
-                className="w-5"
-                onChange={handleChange}
-                checked={sidebardata.type === "rent"}
-              />
-              <span>Rent</span>
+              <label className="container">
+                <input
+                  type="checkbox"
+                  id="rent"
+                  onChange={handleChange}
+                  checked={sidebardata.type === "rent"}
+                />
+                <div className="checkmark"></div>
+              </label>
+              <span className="merriweather-regular">Rent</span>
             </div>
             <div className="flex gap-2">
-              <input
-                type="checkbox"
-                id="sale"
-                className="w-5"
-                onChange={handleChange}
-                checked={sidebardata.type === "sale"}
-              />
-              <span>Sale</span>
+              <label className="container">
+                <input
+                  type="checkbox"
+                  id="sale"
+                  onChange={handleChange}
+                  checked={sidebardata.type === "sale"}
+                />
+                <div className="checkmark"></div>
+              </label>
+              <span className="merriweather-regular">Sale</span>
             </div>
             <div className="flex gap-2">
-              <input
-                type="checkbox"
-                id="offer"
-                className="w-5"
-                onChange={handleChange}
-                checked={sidebardata.offer}
-              />
-              <span>Offer</span>
+              <label className="container">
+                <input
+                  type="checkbox"
+                  id="offer"
+                  onChange={handleChange}
+                  checked={sidebardata.offer}
+                />
+                <div className="checkmark"></div>
+              </label>
+              <span className="merriweather-regular">Offer</span>
             </div>
           </div>
+
           <div className="flex gap-2 flex-wrap items-center">
             <label className="font-semibold">Amenities:</label>
             <div className="flex gap-2">
-              <input
-                type="checkbox"
-                id="parking"
-                className="w-5"
-                onChange={handleChange}
-                checked={sidebardata.parking}
-              />
-              <span>Parking</span>
+              <label className="container">
+                <input
+                  type="checkbox"
+                  id="parking"
+                  onChange={handleChange}
+                  checked={sidebardata.parking}
+                />
+                <div className="checkmark"></div>
+              </label>
+              <span className="merriweather-regular">Parking</span>
             </div>
             <div className="flex gap-2">
-              <input
-                type="checkbox"
-                id="furnished"
-                className="w-5"
-                onChange={handleChange}
-                checked={sidebardata.furnished}
-              />
-              <span>Furnished</span>
+              <label className="container">
+                <input
+                  type="checkbox"
+                  id="furnished"
+                  onChange={handleChange}
+                  checked={sidebardata.furnished}
+                />
+                <div className="checkmark"></div>
+              </label>
+              <span className="merriweather-regular">Furnished</span>
             </div>
           </div>
+
           <div className="flex items-center gap-2">
             <label className="font-semibold">Sort:</label>
             <select
@@ -213,7 +227,7 @@ export default function Search() {
         </form>
       </div>
       <div className="flex-1 p-7">
-        <h1 className="text-3xl font-semibold border-b p-3 text-slate-700 mt-5">
+        <h1 className="merriweather-black-italic text-slate-700 mt-5">
           Listing results:
         </h1>
         <div className="p-7 flex flex-wrap gap-4">

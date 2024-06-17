@@ -32,6 +32,7 @@ export default function CreateListing() {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false);
 
   const handleImageSubmit = (e) => {
     if (files.length > 0 && files.length + formData.imageUrls.length < 7) {
@@ -126,7 +127,11 @@ export default function CreateListing() {
         setError(data.message);
         return;
       }
-      navigate(`/listing/${data._id}`);
+      setShowSuccessPopup(true);
+      setTimeout(() => {
+        setShowSuccessPopup(false);
+        navigate(`/`);
+      }, 2000);
     } catch (error) {
       setError(error.message);
       setLoading(false);
@@ -307,8 +312,8 @@ export default function CreateListing() {
                 <div className="flex flex-col items-center">
                   <p className="merriweather-regular">Discounted price</p>
                   {formData.type === "rent" && (
-                  <span className="text-xs">(₹ / month)</span>
-                )}
+                    <span className="text-xs">(₹ / month)</span>
+                  )}
                 </div>
               </div>
             )}
@@ -388,6 +393,14 @@ export default function CreateListing() {
           {error && <p className="text-red-700 text-sm">{error}</p>}
         </div>
       </form>
+      {showSuccessPopup && (
+        <div className="fixed inset-0 flex items-center justify-center bg-gray-900 bg-opacity-50">
+          <div className="bg-white p-6 rounded shadow-md text-center">
+            <h2 className="text-2xl font-semibold">Success!</h2>
+            <p>Your listing has been created.</p>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
