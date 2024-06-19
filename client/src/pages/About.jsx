@@ -1,31 +1,66 @@
-import React from "react";
+import React from 'react';
+import "../components/compo.css"; 
+import aboutImage from '../assets/About.jpg';
+import img1 from '../assets/A.jpg';
+import img2 from '../assets/B.jpg';
+import img3 from '../assets/C.jpg';
 
-export default function About() {
+const blogPosts = [
+  {
+    date: 'Mar 16, 2020',
+    author: 'Michael Foster',
+    title: 'Vel expedita assumenda placeat aut nisi optio voluptates quas',
+    imageUrl: img1,
+  },
+  {
+    date: 'Mar 10, 2020',
+    author: 'Lindsay Walton',
+    title: 'Libero quisquam voluptatibus nam iusto qui dolor',
+    imageUrl: img2,
+  },
+  {
+    date: 'Feb 12, 2020',
+    author: 'Tom Cook',
+    title: 'Asperiores mollitia et dolor autem modi sit eius quisquam',
+    imageUrl: img3,
+  },
+];
+
+const BlogSection = () => {
   return (
-    <div className="py-20 px-4 max-w-6xl mx-auto">
-      <h1 className="text-3xl font-bold mb-4 text-slate-800">
-        About CityScape
-      </h1>
-      <p className="mb-4 text-slate-700">
-        CityScape is a leading real estate agency that specializes in
-        helping clients buy, sell, and rent properties in the most desirable
-        neighborhoods. Our team of experienced agents is dedicated to providing
-        exceptional service and making the buying and selling process as smooth
-        as possible.
-      </p>
-      <p className="mb-4 text-slate-700">
-        Our mission is to help our clients achieve their real estate goals by
-        providing expert advice, personalized service, and a deep understanding
-        of the local market. Whether you are looking to buy, sell, or rent a
-        property, we are here to help you every step of the way.
-      </p>
-      <p className="mb-4 text-slate-700">
-        Our team of agents has a wealth of experience and knowledge in the real
-        estate industry, and we are committed to providing the highest level of
-        service to our clients. We believe that buying or selling a property
-        should be an exciting and rewarding experience, and we are dedicated to
-        making that a reality for each and every one of our clients.
-      </p>
+    <div className="blog-section">
+      <h2>From the Blog</h2>
+      <div className="blog-posts">
+        {blogPosts.map((post, index) => (
+          <div key={index} className="blog-post">
+            <img src={post.imageUrl} alt={post.title} className="blog-image" />
+            <div className="blog-content">
+              <p className="date">{post.date}</p>
+              <p className="author">{post.author}</p>
+              <h3 className="title">{post.title}</h3>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
-}
+};
+
+const About = () => {
+  return (
+    <div className="about-blog-container">
+      <div className="about-container">
+        <div className="about-text">
+          <h1>Cityscape: Your Gateway to Urban Living</h1>
+          <p>Discover your dream home with Cityscape, the premier real estate platform specializing in urban properties. Whether you're searching for a chic downtown apartment, a cozy suburban house, or a commercial space for your business, Cityscape offers a comprehensive and user-friendly experience. With an extensive database of listings, personalized recommendations, and expert insights into the latest market trends, finding your perfect property has never been easier. Explore Cityscape today and step into the future of urban living.</p>
+        </div>
+        <div className="about-image">
+          <img src={aboutImage} alt="Team" />
+        </div>
+      </div>
+      <BlogSection />
+    </div>
+  );
+};
+
+export default About;

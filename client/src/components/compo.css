@@ -1,3 +1,109 @@
+.about-blog-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background-color: transparent; /* Ensure it inherits the existing background */
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 40px;
+}
+
+.about-text {
+  flex: 1;
+  padding: 20px;
+}
+
+.about-text h1 {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: black; /* Ensure the heading text is black */
+}
+
+.about-text p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: black; /* Ensure the paragraph text is black */
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.blog-section {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  padding: 2rem;
+  background-color: transparent; /* Make background transparent */
+}
+
+.blog-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.blog-posts {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.blog-post {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  transition: transform 0.3s;
+}
+
+.blog-post:hover {
+  transform: translateY(-5px);
+}
+
+.blog-image {
+  width: 100%;
+  height: auto;
+}
+
+.blog-content {
+  padding: 1rem;
+}
+
+.date, .author {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.title {
+  font-size: 1.1rem;
+  color: #333;
+  margin-top: 0.5rem;
+}
+
+
+
+
 /* Nav link styles */
 .nav-link {
     color: #fff;
@@ -327,3 +433,7 @@
     transform: translateY(5px);
     box-shadow: 0px 0px 0px 0px #a29bfe;
   }
+
+  
+
+ 

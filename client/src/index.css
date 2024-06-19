@@ -7,6 +7,8 @@
 
 body {
   /* Set background image */
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
   background-image: url('./BG.jpg');
   
   /* Set background size and other properties as needed */
@@ -14,6 +16,10 @@ body {
   background-repeat: repeat; /* Prevent repetition */
   /* Add any other background properties such as position, attachment, etc. */
 }
+html {
+  box-sizing: border-box;
+}
+
 .merriweather-light {
   font-family: "Merriweather", serif;
   font-weight: 300;
