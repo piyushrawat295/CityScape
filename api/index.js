@@ -10,12 +10,15 @@ import path from 'path';
 dotenv.config();
 
 mongoose
-  .connect(process.env.MONGO)
+  .connect(process.env.MONGO, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(() => {
     console.log("Connected to MongoDB!");
   })
   .catch((err) => {
-    console.log(err);
+    console.error("Failed to connect to MongoDB:", err);
   });
 
   const __dirname = path.resolve();
